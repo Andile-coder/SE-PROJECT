@@ -12,7 +12,7 @@ router.post('/api/movie', json(), (request, response, next) => {
   Controller.Book(request, response, next);
 });
 
-router.get('/api/seats', json(), (request, response, next) => {
+router.post('/api/seats', json(), (request, response, next) => {
   Controller.GetAvailableSeats(request, response, next);
 });
 export default router;
