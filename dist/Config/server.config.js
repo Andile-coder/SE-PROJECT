@@ -7,7 +7,7 @@ exports.ServerConfig = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const Wrapper_1 = require("../Middlewares/Wrapper");
-const Auth_1 = __importDefault(require("../Routes/Auth"));
+const Booking_1 = __importDefault(require("../Routes/Booking"));
 class ServerConfig {
     constructor() {
         this.server = (0, express_1.default)();
@@ -30,7 +30,7 @@ class ServerConfig {
         this.server.get('/', (_request, response) => {
             response.status(200).json({ msg: '🔥MRANK-CLUB🔥' });
         });
-        this.server.use(Auth_1.default);
+        this.server.use(Booking_1.default);
         this.server.use(Wrapper_1.wrapper);
     }
 }

@@ -7,7 +7,6 @@ export class ServerConfig {
   public server: Application = express();
 
   constructor() {
-    this._middleware();
     this._routes();
   }
 
@@ -15,16 +14,8 @@ export class ServerConfig {
     return this.server;
   }
 
-  private _middleware(): void {
-    this.server.use(
-      cors({
-        origin: 'http://localhost:3000',
-        credentials: true,
-      })
-    );
-  }
-
   private _routes(): void {
+    this.server.use(cors());
     this.server.get('/test', (_request, response) => {
       response.status(200).json({ msg: 'Test' });
     });
