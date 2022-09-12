@@ -34,7 +34,7 @@ class BookingController {
                 if (error.constraint === 'booking_movie_id_seat_timebooked_key') {
                     return next(Error_1.APIError.badRequest(`Seat ${seat} scheduled for ${timeBooked}pm, has been booked for for this movie select another`));
                 }
-                return next(Error_1.APIError.internalError('Network Error: Failed to book ticket'));
+                return next(Error_1.APIError.internalError(error));
             }
         });
     }
