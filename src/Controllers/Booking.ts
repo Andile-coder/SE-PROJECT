@@ -45,7 +45,7 @@ export class BookingController {
       pgClient.release();
       return response.status(200).json(movies);
     } catch (error) {
-      return next(APIError.internalError('Network Error: Failed to get movis'));
+      return next(APIError.internalError('Network Error: Failed to get movis', error));
     }
   }
 
