@@ -11,19 +11,13 @@ const Booking_1 = __importDefault(require("../Routes/Booking"));
 class ServerConfig {
     constructor() {
         this.server = (0, express_1.default)();
-        this._middleware();
         this._routes();
     }
     getServer() {
         return this.server;
     }
-    _middleware() {
-        this.server.use((0, cors_1.default)({
-            origin: 'http://localhost:3000',
-            credentials: true,
-        }));
-    }
     _routes() {
+        this.server.use((0, cors_1.default)());
         this.server.get('/test', (_request, response) => {
             response.status(200).json({ msg: 'Test' });
         });

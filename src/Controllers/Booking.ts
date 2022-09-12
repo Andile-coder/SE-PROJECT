@@ -29,7 +29,7 @@ export class BookingController {
           APIError.badRequest(`Seat ${seat} scheduled for ${timeBooked}pm, has been booked for for this movie select another`)
         );
       }
-      return next(APIError.internalError('Network Error: Failed to book ticket'));
+      return next(APIError.internalError(error));
     }
   }
 

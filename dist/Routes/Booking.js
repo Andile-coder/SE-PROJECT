@@ -10,7 +10,7 @@ router.get('/api/movies', (request, response, next) => {
 router.post('/api/movie', (0, express_1.json)(), (request, response, next) => {
     Controller.Book(request, response, next);
 });
-router.get('/api/seats', (0, express_1.json)(), (request, response, next) => {
+router.post('/api/seats', (0, express_1.json)(), (request, response, next) => {
     Controller.GetAvailableSeats(request, response, next);
 });
 exports.default = router;
